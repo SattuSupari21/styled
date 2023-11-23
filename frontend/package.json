@@ -9,10 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.3.0",
+    "@stripe/stripe-js": "^2.2.0",
+    "@types/styled-components": "^5.1.26",
+    "@urql/core": "^4.2.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
+    "framer-motion": "^10.16.5",
+    "graphql": "^16.7.1",
     "next": "13.4.10",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
+    "react-loading-skeleton": "^3.3.1",
+    "stripe": "^14.5.0",
+    "styled-components": "^6.0.4",
+    "urql": "^4.0.4"
   }
 }
