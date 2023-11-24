@@ -49,13 +49,10 @@ export default function SimilarProductsComponent() {
     return (
         <div>
             <Gallery>
-
                 {matchingProductDetails.map((product) => (
                     <Product key={product.attributes.slug} product={product} />
                 ))}
-
             </Gallery>
         </div>
     )
-
 }
