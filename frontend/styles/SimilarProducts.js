@@ -1,6 +1,11 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-export const ProductStyles = styled.div`
+export const Products = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
+`
+export const SimilarProductStyles = styled.div`
     background-color: white;
     position: relative;
     display: flex;
@@ -20,4 +25,4 @@ export const ProductStyles = styled.div`
         font-size: 1rem;
         padding: 0.5rem 0rem;
     }
-`;
+`

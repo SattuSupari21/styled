@@ -44,7 +44,7 @@ export default function Success({ order }) {
                         <div key={item.id}>
                           <p>Product: {item.description}</p>
                           <p>Quantity: {item.quantity}</p>
-                          <p>Price: {item.price.unit_amount}</p>
+                          <p>Price: {item.price.unit_amount / 100}</p>
                         </div>
                       ))}
                   </OrderInfo>
