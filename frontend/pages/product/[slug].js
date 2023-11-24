@@ -28,21 +28,21 @@ export default function ProductDetails() {
     if (error) return <p>Oh no... {error.message}</p>;
 
     // extracting our data
-    const { title, description, image, price } = data.products.data[0].attributes;
+    const { BrandName, Description, Image, Price } = data.items.data[0].attributes;
 
     const notify = () => {
-        toast.success(`${title} added to your cart 🤩`, {
+        toast.success(`${BrandName} added to your cart 🤩`, {
             duration: 1000,
         });
     }
 
     return (
         <DetailsStyle>
-            <img src={image.data.attributes.formats.medium.url} alt={title} />
+            <img src={Image.data.attributes.formats.small.url} alt={BrandName} />
             <ProductInfo>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <p>${price}</p>
+                <h3>{BrandName}</h3>
+                <p>{Description}</p>
+                <p>Rs. {Price}</p>
                 <Quantity>
                     <span>Quantity</span>
                     <button onClick={DecreaseQty}><AiFillMinusCircle /></button>
@@ -50,7 +50,7 @@ export default function ProductDetails() {
                     <button onClick={IncreaseQty}><AiFillPlusCircle /></button>
                 </Quantity>
                 <Buy onClick={() => {
-                    onAdd(data.products.data[0].attributes, qty);
+                    onAdd(data.items.data[0].attributes, qty);
                     notify();
                 }}>
                     Add to cart

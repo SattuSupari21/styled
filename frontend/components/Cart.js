@@ -1,5 +1,5 @@
-import { useStateContext } from "@/lib/context"
-import getStripe from "@/lib/getStripe";
+import { useStateContext } from "../lib/context"
+import getStripe from "../lib/getStripe";
 import { CartWrapper, CartStyle, Card, CardInfo, EmptyStyle, Quantity, Checkout, Cards } from "@/styles/CartStyles";
 // import { Quantity } from "@/styles/ProductDetails";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
@@ -36,12 +36,13 @@ export default function Cart() {
             body: JSON.stringify(cartItems)
         });
         const data = await response.json();
+        console.log(data);
         await stripe.redirectToCheckout({ sessionId: data.id });
     }
     
     return (
         <CartWrapper animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} onClick={() => setShowCart(false)}>
-            {console.log(cartItems)}
+            {/*{console.log(cartItems)}*/}
             <CartStyle initial={{x: '50%'}} animate={{x: '0%'}} transition={{type: 'tween'}} exit={{x: '50%'}} onClick={(e) => e.stopPropagation()}>
                 {cartItems.length < 1 &&  (
                     <EmptyStyle initial={{opacity: 0, scale: 0.8}} animate={{opacity: 1, scale: 1}} transition={{delay: 0.2}}>
@@ -55,10 +56,10 @@ export default function Cart() {
                             console.log(item);
                             return (
                                 <Card layout key={item.slug} variants={card}>
-                                    <img src={item.image.data.attributes.formats.thumbnail.url} alt={item.title} />
+                                    <img src={item.Image.data.attributes.formats.thumbnail.url} alt={item.BrandName} />
                                     <CardInfo>
-                                        <h3>{item.title}</h3>
-                                        <h3>${item.price}</h3>
+                                        <h3>{item.BrandName}</h3>
+                                        <h3>Rs. {item.Price}</h3>
                                         <Quantity>
                                             <span>Quantity</span>
                                             <button onClick={() => onRemove(item)} style={{cursor: 'pointer'}}>
@@ -77,7 +78,7 @@ export default function Cart() {
                 </Cards>
                 {cartItems.length >= 1 && (
                     <Checkout layout>
-                        <h3>Subtotal: ${totalPrice}</h3>
+                        <h3>Subtotal: Rs. {totalPrice}</h3>
                         <button onClick={handleCheckout}>Purchase</button>
                     </Checkout>
                 )}

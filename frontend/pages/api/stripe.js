@@ -16,12 +16,12 @@ export default async function handler(req, res) {
                 line_items: req.body.map(item => {
                     return {
                         price_data: {
-                            currency: 'usd',
+                            currency: 'inr',
                             product_data: {
-                                name: item.title,
-                                images: [item.image.data.attributes.formats.thumbnail.url],
+                                name: item.BrandName,
+                                images: [item.Image.data.attributes.formats.thumbnail.url],
                             },
-                            unit_amount: item.price * 100,
+                            unit_amount: item.Price * 100,
                         },
                         quantity: item.quantity
                     };
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
             });
             res.status(200).json(session);
         } catch (error) {
-            res.status(err.statusCode || 500).json(error.message);
+            res.status(error.statusCode || 500).json(error.message);
         }
     }
 }

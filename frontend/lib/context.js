@@ -26,7 +26,7 @@ export const StateContext = ({ children }) => {
   // add product to cart
   const onAdd = (product, quantity) => {
     // Total price
-    setTotalPrice((prevTotal) => prevTotal + product.price * quantity);
+    setTotalPrice((prevTotal) => prevTotal + product.Price * quantity);
     
     // Increase total quantity
     setTotalQuantities((prevQty) => prevQty + quantity);
@@ -42,7 +42,7 @@ export const StateContext = ({ children }) => {
   
 const onRemove = (product) => {
   // Total price
-  setTotalPrice((prevTotal) => prevTotal - product.price);
+  setTotalPrice((prevTotal) => prevTotal - product.Price);
 
   // Decrease total quantity
   setTotalQuantities((prevQty) => prevQty - 1);

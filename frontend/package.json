@@ -13,6 +13,7 @@
     "@stripe/stripe-js": "^2.2.0",
     "@types/styled-components": "^5.1.26",
     "@urql/core": "^4.2.0",
+    "axios": "^1.6.2",
     "babel-plugin-styled-components": "^2.1.4",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",

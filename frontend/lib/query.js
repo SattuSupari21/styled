@@ -1,13 +1,61 @@
+// export const PRODUCT_QUERY =`
+// query{
+//     products{
+//       data{
+//         attributes{
+//           title
+//           description
+//           price
+//           slug
+//           image{
+//             data{
+//               attributes{
+//                 formats
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+//
+// export const GET_PRODUCT_QUERY = `
+//   query getProduct($slug: String!) {
+//     products(filters: {slug: {eq: $slug}}) {
+//       data {
+//         attributes {
+//           price,
+//           title,
+//           slug,
+//           description,
+//           image {
+//             data {
+//               attributes {
+//                 formats
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+import { gql } from 'urql';
+
 export const PRODUCT_QUERY =`
 query{
-    products{
+    items (pagination: {limit: 20}){
       data{
         attributes{
-          title
-          description
-          price
+          Product_id
+          BrandName
+          Individual_category
+          Description
+          Price
           slug
-          image{
+          Image{
             data{
               attributes{
                 formats
@@ -22,14 +70,16 @@ query{
 
 export const GET_PRODUCT_QUERY = `
   query getProduct($slug: String!) {
-    products(filters: {slug: {eq: $slug}}) {
+    items(filters: {slug: {eq: $slug}}) {
       data {
         attributes {
-          price,
-          title,
+          Product_id,
+          BrandName,
+          Individual_category,
+          Description,
+          Price,
           slug,
-          description,
-          image {
+          Image {
             data {
               attributes {
                 formats

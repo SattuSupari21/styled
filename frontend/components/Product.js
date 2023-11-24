@@ -4,17 +4,17 @@ import Link from "next/link";
 
 export default function Product({ product }) {
 
-    const { title, price, image, slug } = product.attributes;
+    const { BrandName, Price, Image, slug } = product.attributes;
 
     return (
         <ProductStyles>
             <Link href={`/product/${slug}`}>
                 <div>
-                    <img src={image.data.attributes.formats.small.url} alt={slug} />
+                    <img src={Image.data.attributes.formats.small.url} alt={slug} />
                 </div>
             </Link>
-            <h2>{title}</h2>
-            <h3>${price}</h3>
+            <h2>{BrandName}</h2>
+            <h3>Rs. {Price}</h3>
         </ProductStyles>
     )
 }
