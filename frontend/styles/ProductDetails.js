@@ -13,7 +13,7 @@ export const ProductInfo = styled.div`
     width: 40%;
     button {
         font-size: 1rem;
-        font-weight: medium;
+        font-weight: normal;
         padding: 0.5rem 1rem;
         cursor: pointer;
     }
