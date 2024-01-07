@@ -42,3 +42,7 @@ p {
   line-height: 150%;
   color: var(--secondary);
 }
+
+.slick-slide > div {
+  margin: 0 10px;
+}

@@ -45,6 +45,26 @@ export const GET_PRODUCT_QUERY = `
     }
   }
 `
+export const GET_TRENDING_QUERY =`
+query{
+    items (pagination: {limit: 10}){
+      data{
+        attributes{
+          Product_id
+          BrandName
+          slug
+          Image{
+            data{
+              attributes{
+                formats
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 // export const PRODUCT_QUERY =`
 // query{

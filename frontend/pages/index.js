@@ -5,6 +5,7 @@ import Product from "../components/Product";
 import { Gallery } from "../styles/Gallery";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import TrendingProductsComponents from "@/components/TrendingProductsComponent";
 export default function Home() {
   //Fetch products from strapi
   const [results] = useQuery({ query: PRODUCT_QUERY});
@@ -36,6 +37,7 @@ export default function Home() {
         </Head>
 
         <main>
+            <TrendingProductsComponents />
           <Gallery>
             {fetching && <Skeleton />}
             {products.map((product) => (
